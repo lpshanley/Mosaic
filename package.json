@@ -38,8 +38,8 @@
     "check:format": "prettier --check .",
     "check:exports": "attw --pack .",
     "release:local": "npm run ci && changeset version && changeset publish",
-    "release": "npm run ci && changeset version && changeset publish",
-    "changeset": "changeset"
+    "changeset": "changeset",
+    "prepare": "npm run ci"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.1",
