@@ -7,7 +7,6 @@ suite('Init Test', () => {
   });
 
   test('Version is 0', () => {
-
-    expect(VERSION).toBe(0)
-  })
+    expect(VERSION).toBe(0);
+  });
 });
