@@ -1,0 +1,51 @@
+{
+  "name": "@shanstack/mosaic",
+  "version": "0.0.1",
+  "author": "Lucas Shanley",
+  "license": "MIT",
+  "description": "",
+  "private": false,
+  "homepage": "https://github.com/lpshanley/mosaic",
+  "bugs": {
+    "url": "https://github.com/lpshanley/mosaic/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lpshanley/mosaic.git"
+  },
+  "keywords": [
+    "mosaic",
+    "mfe"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vitest --coverage",
+    "build": "tsup",
+    "ci": "npm run build && npm run check:format && npm run check:exports && npm run lint && npm run test",
+    "lint": "tsc",
+    "test": "vitest run --coverage",
+    "format": "prettier --write .",
+    "check:format": "prettier --check .",
+    "check:exports": "attw --pack .",
+    "release:local": "npm run ci && changeset version && changeset publish"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.1",
+    "@changesets/cli": "^2.27.10",
+    "@vitest/coverage-v8": "^2.1.8",
+    "prettier": "^3.4.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
