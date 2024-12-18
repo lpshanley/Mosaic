@@ -31,13 +31,13 @@
   "scripts": {
     "dev": "vitest --coverage",
     "build": "tsup",
-    "ci": "npm run build && npm run check:format && npm run check:exports && npm run lint && npm run test",
+    "ci": "pnpm run build && pnpm run check:format && pnpm run check:exports && pnpm run lint && pnpm run test",
     "lint": "tsc",
     "test": "vitest run --coverage",
     "format": "prettier --write .",
     "check:format": "prettier --check .",
     "check:exports": "attw --pack .",
-    "release:local": "npm run ci && changeset version && changeset publish"
+    "release:local": "pnpm run ci && changeset version && changeset publish"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.1",
